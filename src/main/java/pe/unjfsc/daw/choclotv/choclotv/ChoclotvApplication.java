@@ -48,10 +48,12 @@ public class ChoclotvApplication implements CommandLineRunner {
 		LOG.info("EJECUTANDO: CommandLineRunner.");
 
 		// Instanciamos el tipo de referencia para el mappeo del JSON a la data que tengamos en el modelo:
-		TypeReference<List<Usuario>> typeReference = new TypeReference<List<Usuario>>() {
-		};
+		TypeReference<List<Usuario>> typeReference = new TypeReference<List<Usuario>>() {};
+
 		// Usamos inputStream para la lectura de archivos
 		InputStream inputStream = TypeReference.class.getResourceAsStream("/data/usuarios.json");
+		LOG.info(String.valueOf(inputStream.markSupported()));
+
 		// Mapeamos lo que obtuvimos en el inputStream al tipo de referencia indicado al inicio:
 		List<Usuario> usuarios = mapper.readValue(inputStream, typeReference);
 		// Listamos los usuarios:
