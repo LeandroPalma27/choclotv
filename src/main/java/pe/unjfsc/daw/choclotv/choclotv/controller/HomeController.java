@@ -11,5 +11,10 @@ public class HomeController {
     public String home(Model model) {
         return "home";
     }
+    
+    @GetMapping({"/home2"})
+    public String home2(Model model) {
+        return "Index";
+    }
 
 }
