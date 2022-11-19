@@ -22,7 +22,7 @@ import pe.unjfsc.daw.choclotv.choclotv.service.impl.UsuarioService;
 
 @SpringBootApplication
 // Implementamos la interfaz CommandLineRunner:
-public class ChoclotvApplication implements CommandLineRunner {
+public class ChoclotvApplication{
 
 	private static final Logger LOG = LoggerFactory.getLogger(ChoclotvApplication.class);
 	private static org.springframework.context.ApplicationContext context;
@@ -41,7 +41,7 @@ public class ChoclotvApplication implements CommandLineRunner {
 	}
 
 	// Sobrescribimos el metodo run(se sobrescribe de manera obligatoria):
-	@Override
+	/*@Override
 	// Cada bean que implemente la interfaz CommandLineRunner, ejecutara el metodo run.
 	public void run(String... args) throws Exception {
 
@@ -69,5 +69,5 @@ public class ChoclotvApplication implements CommandLineRunner {
 
 		LOG.info("Duracion de la transaccion: ".concat(String.valueOf(duracion + "ms.")));
 		LOG.info("Usuarios guardados.");
-	}
+	}*/
 }
