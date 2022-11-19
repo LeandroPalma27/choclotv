@@ -14,7 +14,7 @@ public class HomeController {
     
     @GetMapping({"/home2"})
     public String home2(Model model) {
-        return "Index";
+        return "index";
     }
 
 }

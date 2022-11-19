@@ -10,7 +10,7 @@
         crossorigin="anonymous"></script>
 
     <script src="main.js"></script>
-    <link rel="stylesheet" th:href="@{/css/home.css}">
+    
 </head>
 
 <body>
