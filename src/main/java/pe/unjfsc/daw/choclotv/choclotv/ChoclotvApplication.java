@@ -1,35 +1,18 @@
 package pe.unjfsc.daw.choclotv.choclotv;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.List;
-
-import org.apache.catalina.core.ApplicationContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Bean;
-
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import lombok.extern.java.Log;
-import pe.unjfsc.daw.choclotv.choclotv.model.entity.Usuario;
-import pe.unjfsc.daw.choclotv.choclotv.service.impl.UsuarioService;
 
 @SpringBootApplication
 // Implementamos la interfaz CommandLineRunner:
 public class ChoclotvApplication{
 
 	private static final Logger LOG = LoggerFactory.getLogger(ChoclotvApplication.class);
-	private static org.springframework.context.ApplicationContext context;
-
-	// Inyectamos la clase servie del usuario
-	@Autowired
-	UsuarioService usuarioService;
+	//private static org.springframework.context.ApplicationContext context;
 
 	// Inyectamos el ObjectMapper, para el mapeo de datos leidos de un archivo con el TypeReference indicado
 	@Autowired
