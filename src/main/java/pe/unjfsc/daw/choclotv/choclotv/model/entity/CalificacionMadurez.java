@@ -33,6 +33,17 @@ public class CalificacionMadurez {
     @JsonIgnore
     private List<Titulo> titulosDisponibles;
 
+    @Size(min = 1, max = 3)
+    private String clasificacion;
+
+    public String getClasificacion() {
+        return clasificacion;
+    }
+
+    public void setClasificacion(String clasificacion) {
+        this.clasificacion = clasificacion;
+    }
+
     public Long getId() {
         return id;
     }

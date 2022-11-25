@@ -1,16 +1,22 @@
 package pe.unjfsc.daw.choclotv.choclotv.model.entity;
 
 import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Size;
 import org.springframework.format.annotation.DateTimeFormat;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 
 @Entity
@@ -18,14 +24,16 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 public class Titulo {
     
     @Id
+    @Column(name = "codigo", unique = true, nullable = false)
     @Size(max = 8, min = 8)
     private String codigo;
 
     @Size(max = 120)
+    @Column(unique = true, nullable = false)
     private String nombre;
 
     @Min(value = 1899)
-    private Integer año;
+    private Integer anio;
 
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     @JsonFormat(pattern = "yyyy-MM-dd")
@@ -39,6 +47,17 @@ public class Titulo {
     @JoinColumn(name = "calidad_id", nullable = false, referencedColumnName="id", updatable = false)
     private CalidadVideo calidadVideo;
 
+    @OneToMany(mappedBy = "titulo", orphanRemoval = true, cascade = CascadeType.ALL)
+    @JsonIgnore
+    private List<Trailer> trailersDisponibles;
+
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "logo_id", referencedColumnName = "id")
+    private Logo logo;
+
+    @Size(min = 1, max = 500)
+    private String descripcion;
+
     public String getCodigo() {
         return codigo;
     }
@@ -47,20 +66,20 @@ public class Titulo {
         this.codigo = codigo;
     }
 
+    public Logo getLogo() {
+        return logo;
+    }
+
+    public void setLogo(Logo logo) {
+        this.logo = logo;
+    }
+
     public String getNombre() {
         return nombre;
     }
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
-    }
-
-    public Integer getAño() {
-        return año;
-    }
-
-    public void setAño(Integer año) {
-        this.año = año;
     }
 
     public Date getFechaRegistro() {
@@ -87,4 +106,30 @@ public class Titulo {
         this.calidadVideo = calidadVideo;
     }
 
+    public List<Trailer> getTrailersDisponibles() {
+        return trailersDisponibles;
+    }
+
+    public void setTrailersDisponibles(Trailer trailer) {
+        this.trailersDisponibles.add(trailer);
+    }
+
+    public Integer getAnio() {
+        return anio;
+    }
+
+    public void setAnio(Integer anio) {
+        this.anio = anio;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    
+    
 }
