@@ -2,21 +2,16 @@ package pe.unjfsc.daw.choclotv.choclotv.config;
 
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
-import javax.servlet.ServletRegistration;
-
 import org.springframework.web.WebApplicationInitializer;
-import org.springframework.web.context.support.XmlWebApplicationContext;
-import org.springframework.web.servlet.DispatcherServlet;
 
+// Clase de configuracion para el inicio de la aplicacion.
+// Implementa la clase WebApplicationInitializer:
 public class MyWebAppInitializer implements WebApplicationInitializer{
 
     @Override
+    // Implementa el metodo onStartup, de la interfaz WebApplicationInitializer:
     public void onStartup(ServletContext servletContext) throws ServletException {
-        XmlWebApplicationContext context = new XmlWebApplicationContext();
-        context.setConfigLocation("/WEB-INF/spring-beans/spring-web-config.xml");
-        ServletRegistration.Dynamic dispatcher = servletContext.addServlet("dispatcher", new DispatcherServlet(context));
-        dispatcher.setLoadOnStartup(1);
-        dispatcher.addMapping("/");
+        
     }
     
 }

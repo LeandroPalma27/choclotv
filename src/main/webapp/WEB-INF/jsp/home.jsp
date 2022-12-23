@@ -1,180 +1,251 @@
-<html>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+        <!DOCTYPE html>
+        <html lang="es">
 
-<head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>ChocloTV</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"
-        integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9"
-        crossorigin="anonymous"></script>
+        <head> </head>
 
-    <script src="main.js"></script>
-    
-</head>
-
-<body>
-    <div class="wrapper">
-
-        <!-- HEADER -->
-        <header>
-            <div class="netflixLogo">
-                <h2>ChocloTV</h2>
-            </div>
-            <nav class="sub-nav">
-                <a href="#"><i class="fas fa-search sub-nav-logo"></i></a>
-                <a href="#"><i class="fas fa-bell sub-nav-logo"></i></a>
-                <a href="#">Account</a>
-            </nav>
-        </header>
-        <!-- END OF HEADER -->
-
-        <!-- MAIN CONTAINER -->
-        <section class="main-container">
-            <div class="location" id="home">
-                <h1 id="home">Popular</h1>
-                <div class="box">
-                    <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/p1.PNG?raw=true"
-                            alt=""></a>
-                    <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/p2.PNG?raw=true"
-                            alt=""></a>
-                    <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/p3.PNG?raw=true"
-                            alt=""></a>
-                    <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/p4.PNG?raw=true"
-                            alt=""></a>
-                    <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/p5.PNG?raw=true"
-                            alt=""></a>
-                    <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/p6.PNG?raw=true"
-                            alt=""></a>
-
-                    <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/p7.PNG?raw=true"
-                            alt=""></a>
-                    <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/p8.PNG?raw=true"
-                            alt=""></a>
-                    <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/p9.PNG?raw=true"
-                            alt=""></a>
-                    <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/p10.PNG?raw=true"
-                            alt=""></a>
-                    <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/p11.PNG?raw=true"
-                            alt=""></a>
-                    <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/p12.PNG?raw=true"
-                            alt=""></a>
+        <body>
+            <!-- preloader -->
+            <div id="preloader">
+                <div id="loading-center">
+                    <div id="loading-center-absolute">
+                        <img src="img/preloader.svg" alt="" />
+                    </div>
                 </div>
             </div>
+            <!-- preloader-end -->
 
+            <!-- Scroll-top -->
+            <button class="scroll-top scroll-to-target" data-target="html">
+                <i class="fas fa-angle-up"></i>
+            </button>
+            <!-- Scroll-top-end-->
 
-            <h1 id="myList">Lo que esta de moda</h1>
-            <div class="box">
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/t1.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/t2.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/t3.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/t4.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/t5.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/t6.PNG?raw=true"
-                        alt=""></a>
-            </div>
-
-            <h1 id="tvShows">Series de TV</h1>
-            <div class="box">
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/tv1.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/tv2.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/tv3.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/tv4.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/tv5.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/tv6.PNG?raw=true"
-                        alt=""></a>
-
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/tv7.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/tv8.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/tv9.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/tv10.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/tv11.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/tv12.PNG?raw=true"
-                        alt=""></a>
-            </div>
-
-
-            <h1 id="movies">Accion y aventura</h1>
-            <div class="box">
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/m1.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/m2.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/m3.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/m4.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/m5.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/m6.PNG?raw=true"
-                        alt=""></a>
-            </div>
-
-            <h1 id="originals">Originales de ChocloTV</h1>
-            <div class="box">
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/o1.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/o2.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/o3.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/o4.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/o5.PNG?raw=true"
-                        alt=""></a>
-                <a href=""><img src="https://github.com/carlosavilae/Netflix-Clone/blob/master/img/o6.PNG?raw=true"
-                        alt=""></a>
-            </div>
-
-            <!-- END OF MAIN CONTAINER -->
-
-            <!-- LINKS -->
-            <section class="link">
-                <div class="logos">
-                    <a href="#"><i class="fab fa-facebook-square fa-2x logo"></i></a>
-                    <a href="#"><i class="fab fa-instagram fa-2x logo"></i></a>
-                    <a href="#"><i class="fab fa-twitter fa-2x logo"></i></a>
-                    <a href="#"><i class="fab fa-youtube fa-2x logo"></i></a>
+            <!-- header-area -->
+            <header class="header-style-two">
+                <div class="header-top-wrap">
+                    <div class="container custom-container">
+                        <div class="row align-items-center">
+                            <div class="col-md-6 d-none d-md-block"></div>
+                            <div class="col-md-6">
+                                <div class="header-top-link">
+                                    <ul class="quick-link">
+                                        <li><a href="#">About Us</a></li>
+                                        <li><a href="#">FAQS</a></li>
+                                    </ul>
+                                    <ul class="header-social">
+                                        <li>
+                                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fab fa-twitter"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fab fa-vimeo-v"></i></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="sub-links">
-                    <ul>
-                        <li><a href="#">Audio and Subtitles</a></li>
-                        <li><a href="#">Audio Description</a></li>
-                        <li><a href="#">Help Center</a></li>
-                        <li><a href="#">Gift Cards</a></li>
-                        <li><a href="#">Media Center</a></li>
-                        <li><a href="#">Investor Relations</a></li>
-                        <li><a href="#">Jobs</a></li>
-                        <li><a href="#">Terms of Use</a></li>
-                        <li><a href="#">Privacy</a></li>
-                        <li><a href="#">Legal Notices</a></li>
-                        <li><a href="#">Corporate Information</a></li>
-                        <li><a href="#">Contact Us</a></li>
-                    </ul>
+                <div id="sticky-header" class="menu-area">
+                    <div class="container custom-container">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="mobile-nav-toggler"><i class="fas fa-bars"></i></div>
+                                <div class="menu-wrap">
+                                    <nav class="menu-nav show">
+                                        <div class="logo">
+                                            <a href="#">
+                                                <h3>Choclo <span>TV</span></h3>
+                                            </a>
+                                        </div>
+                                        <div class="navbar-wrap main-menu d-none d-lg-flex">
+                                            <ul class="navigation">
+                                                <li class="active menu-item-has-children">
+                                                    <a href="#">Inicio</a>
+                                                </li>
+                                                <li class="menu-item-has-children">
+                                                    <a href="#">Peliculas</a>
+                                                </li>
+                                                <li><a href="tv-show.html">Series</a></li>
+                                                <li><a href="pricing.html">Planes</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="header-action d-none d-md-block">
+                                            <ul>
+                                                <li class="d-none d-xl-block">
+                                                    <div class="footer-search">
+                                                        <form action="#">
+                                                            <input type="text" placeholder="" />
+                                                            <button><i class="fas fa-search"></i></button>
+                                                        </form>
+                                                    </div>
+                                                </li>
+                                                <li class="header-lang">
+                                                    <form action="#">
+                                                        <div class="icon"><i class="flaticon-globe"></i></div>
+                                                        <select id="lang-dropdown">
+                                                            <option value="">ES</option>
+                                                            <option value="">EN</option>
+                                                        </select>
+                                                    </form>
+                                                </li>
+                                                <li class="header-btn">
+                                                    <a href="#" class="btn">Iniciar sesion</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                </div>
+
+                                <!-- Mobile Menu  -->
+                                <div class="mobile-menu">
+                                    <div class="close-btn"><i class="fas fa-times"></i></div>
+
+                                    <nav class="menu-box">
+                                        <div class="nav-logo">
+                                            <a href="index.html"><img src="img/logo/logo.png" alt="" title="" /></a>
+                                        </div>
+                                        <div class="menu-outer">
+                                            <!--Here Menu Will Come Automatically Via Javascript / Same Menu as in Header-->
+                                        </div>
+                                        <div class="social-links">
+                                            <ul class="clearfix">
+                                                <li>
+                                                    <a href="#"><span class="fab fa-twitter"></span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span class="fab fa-facebook-square"></span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span class="fab fa-pinterest-p"></span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span class="fab fa-instagram"></span></a>
+                                                </li>
+                                                <li>
+                                                    <a href="#"><span class="fab fa-youtube"></span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </nav>
+                                </div>
+                                <div class="menu-backdrop"></div>
+                                <!-- End Mobile Menu -->
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </section>
-            <!-- END OF LINKS -->
+            </header>
+            <!-- header-area-end -->
 
-            <!-- FOOTER -->
-            <footer>
-                <p>&copy 2021-2022 ChocloTV, Inc.</p>
-            </footer>
-    </div>
-</body>
+            <!-- main-area -->
+            <main>
+                <div hidden id="logoUrls">
+                    <c:forEach var="url" items="${titulos}">
+                        <span hidden>${url.logo.urlLogo}</span>
+                    </c:forEach>
+                </div>
 
-</html>
+                <!-- slider-area -->
+                <section class="slider-area slider-bg" data-background="img/banner/s_slider_bg.jpg">
+                    <div class="slider-active">
+                        <c:forEach var="titulo" items="${titulos}">
+                            <div class="slider-item">
+                                <div class="container">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-6 order-0 order-lg-2">
+                                            <div class="slider-img text-center text-lg-right" data-animation="fadeInRight"
+                                                data-delay="1s">
+                                                <p>${titulo.descripcion}</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6">
+                                            <div class="banner-content">
+                                                <img src="" alt="">
+                                                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;" class="banner-meta" data-animation="fadeInUp" data-delay=".6s">
+                                                    <div style="display: flex; width: 100%; height: 250px; background-size: contain; margin-bottom: 20px;">
+                                                        <img style="display: flex; width: 100%; height: 100%; object-fit: contain;" src="<c:url value="${titulo.logo.urlLogo}"/>"/>
+                                                    </div>
+                                                    <ul style="justify-content: center; align-items: center; margin-bottom: 25px;">
+                                                        <li style="margin: 10px 15px;" class="quality">
+                                                            <span>${titulo.calificacionMadurez.clasificacion}<span></span> <span>${titulo.calificacionMadurez.edadMinima}</span></span>
+                                                            <span>${titulo.calidadVideo.calidad}</span>
+                                                        </li>
+                                                        <li style="margin: 10px 15px;" class="release-time">
+                                                            <span><i class="far fa-calendar-alt"></i>${titulo.anio}</span>
+                                                        </li>
+                                                    </ul>
+                                                    <a href="https://www.youtube.com/watch?v=R2gbPxeNk2E"
+                                                        class="banner-btn btn popup-video" data-animation="fadeInUp"
+                                                        data-delay=".8s"><i class="fas fa-play"></i> Ver ahora</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </c:forEach>
+                    </div>
+                </section>
+                <!-- slider-area-end -->
+
+            <spring:url value="/resources/css/bootstrap.min.css" var="bootstrapCss" />
+            <spring:url value="/resources/css/animate.min.css" var="animateMin" />
+            <spring:url value="/resources/css/magnific-popup.css" var="magnificPopup" />
+            <spring:url value="/resources/css/fontawesome-all.min.css" var="fontawesomeAll" />
+            <spring:url value="/resources/css/owl.carousel.min.css" var="owlCarousel" />
+            <spring:url value="/resources/css/flaticon.css" var="flaticon" />
+            <spring:url value="/resources/css/odometer.css" var="odometer" />
+            <spring:url value="/resources/css/aos.css" var="aos" />
+            <spring:url value="/resources/css/slick.css" var="slick" />
+            <spring:url value="/resources/css/default.css" var="invalid" />
+            <spring:url value="/resources/css/style.css" var="style" />
+            <spring:url value="/resources/css/responsive.css" var="responsive" />
+            <spring:url value="/resources/js/vendor/jquery-3.6.0.min.js" var="jqueryJs" />
+            <spring:url value="/resources/js/popper.min.js" var="poperJs" />
+            <spring:url value="/resources/js/bootstrap.min.js" var="bootstrapJs" />
+            <spring:url value="/resources/js/isotope.pkgd.min.js" var="isotopeJs" />
+            <spring:url value="/resources/js/imagesloaded.pkgd.min.js" var="imagesloadedJs" />
+            <spring:url value="/resources/js/jquery.magnific-popup.min.js" var="jqueryJs2" />
+            <spring:url value="/resources/js/owl.carousel.min.js" var="owlJs" />
+            <spring:url value="/resources/js/slick.min.js" var="slickJs" />
+            <spring:url value="/resources/js/wow.min.js" var="wowJs" />
+            <spring:url value="/resources/js/aos.js" var="aosJs" />
+            <spring:url value="/resources/js/plugins.js" var="pluginsJs" />
+            <spring:url value="/resources/js/main.js" var="mainJs" />
+
+            <link href="${bootstrapCss}" rel="stylesheet" />
+            <link href="${animateMin}" rel="stylesheet" />
+            <link href="${magnificPopup}" rel="stylesheet" />
+            <link href="${fontawesomeAll}" rel="stylesheet" />
+            <link href="${owlCarousel}" rel="stylesheet" />
+            <link href="${flaticon}" rel="stylesheet" />
+            <link href="${odometer}" rel="stylesheet" />
+            <link href="${aos}" rel="stylesheet" />
+            <link href="${slick}" rel="stylesheet" />
+            <link href="${invalid}" rel="stylesheet" />
+            <link href="${style}" rel="stylesheet" />
+            <link href="${responsive}" rel="stylesheet" />
+
+            <script src="${jqueryJs}"></script>
+            <script src="${poperJs}"></script>
+            <script src="${bootstrapJs}"></script>
+            <script src="${isotopeJs}"></script>
+            <script src="${imagesloadedJs}"></script>
+            <script src="${jqueryJs2}"></script>
+            <script src="${owlJs}"></script>
+            <script src="${slickJs}"></script>
+            <script src="${wowJs}"></script>
+            <script src="${aosJs}"></script>
+            <script src="${pluginsJs}"></script>
+            <script src="${mainJs}"></script>
+        </body>
+
+        </html>

@@ -7,27 +7,22 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import pe.unjfsc.daw.choclotv.choclotv.service.impl.ITituloService;
 
+// Controlador HOME para la aplicacion:
+/*
+ * Se encargara de gestionar las peticiones HTTP de carga de vistas, para la parte principal de la aplicacion.
+ * Ejm: Vista inicio, login, vista planes, etc.
+ */
 @Controller
 public class HomeController {
 
     @Autowired
     ITituloService tituloService;
-    
-    @GetMapping({"", "/"})
-    public String home(Model model) {
-        return "home";
-    }
-    
-    @GetMapping({"/home2"})
-    public String home2(Model model) {
-        return "index";
-    }
 
-    @GetMapping("home")
+    @GetMapping({"", "/"})
     public String Home(Model model) {
         model.addAttribute("titulos", tituloService.listarTitulos());
         model.addAttribute("title", "ChocloTV");
-        return "index-2";
+        return "home";
     }
 
 }

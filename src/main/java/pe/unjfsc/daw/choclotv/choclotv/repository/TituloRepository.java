@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import pe.unjfsc.daw.choclotv.choclotv.model.entity.Titulo;
 
+@SuppressWarnings("unchecked")
 @Repository
 public interface TituloRepository extends PagingAndSortingRepository<Titulo, Long>{
     
